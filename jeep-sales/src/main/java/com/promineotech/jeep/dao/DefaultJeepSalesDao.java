@@ -38,7 +38,8 @@ public class DefaultJeepSalesDao implements JeepSalesDao {
 			+ "WHERE model_id = :model_id AND trim_level = :trim_level";
 		//@formatter:on
 
-		// W15 - Coding Assignment - ITEM#3e		
+		// W15 - Coding Assignment - ITEM#3e
+		// Creates a map that we can pass into the namedparameterjdbc template 'jdbcTemplate'
 		Map<String, Object> params = new HashMap<>();
 		params.put("model_id", model.toString());
 		params.put("trim_level", trim);

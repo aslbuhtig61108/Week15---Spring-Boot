@@ -1,5 +1,6 @@
 package com.promineotech.jeep.service;
 
+import java.util.Collections;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,7 +27,10 @@ public class DefaultJeepSalesService implements JeepSalesService {
 		// List<Jeep> jeeps = new ArrayList<>(); // W15 - Coding Assignment - ITEM#2 not relevant to the assignment
 		log.info("The fetchJeeps() method was called with model={} and trim={}", model, trim);
 		
-		return jeepSalesDao.fetchJeeps(model, trim);  // W15 - ITEM#2 states 'return the value in the 'jeeps' variable (we will add to this later).
+		List<Jeep> jeeps = jeepSalesDao.fetchJeeps(model, trim);  // W15 - ITEM#2 states 'return the value in the 'jeeps' variable (we will add to this later).
+		
+		Collections.sort(jeeps);
+		return jeeps;
 	}
 
 }

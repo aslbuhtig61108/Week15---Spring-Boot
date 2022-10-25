@@ -1,6 +1,7 @@
 package com.promineotech.jeep.controller.support;
 
 import java.math.BigDecimal;
+import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -31,6 +32,7 @@ public class FetchJeepTestSupport extends BaseTest {
 			.build());		
 		// @formatter:on
 		
+		Collections.sort(list);
 		return list;
 	}
 }
