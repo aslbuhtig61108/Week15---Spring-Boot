@@ -1,11 +1,15 @@
 package com.promineotech.jeep.controller;
 
 import java.util.List;
+import javax.validation.constraints.Pattern;
+import org.hibernate.validator.constraints.Length;
 import org.springframework.http.HttpStatus;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
+import com.promineotech.jeep.Constants;
 import com.promineotech.jeep.entity.Jeep;
 import com.promineotech.jeep.entity.JeepModel;
 import io.swagger.v3.oas.annotations.OpenAPIDefinition;
@@ -17,8 +21,10 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.servers.Server;
 
-// add documentation to describe the controller with a title
+// turn validation on at the class level
+@Validated
 
+// add documentation to describe the controller with a title
 // Any uri that has '/jeeps' after the port number will get mapped to this class
 @RequestMapping("/jeeps")
 
@@ -26,6 +32,8 @@ import io.swagger.v3.oas.annotations.servers.Server;
     servers = {@Server(url = "http://localhost:8080", description = "Local server.")})
 
 public interface JeepSalesController {
+
+
   // Placing all the OpenAPI annotations inside the interface helps with organization
   // @formatter:off
   @Operation(
@@ -70,9 +78,11 @@ public interface JeepSalesController {
   
   // Returns a 200 or Successful
   @ResponseStatus(code = HttpStatus.OK)
-  List<Jeep> fetchJeeps(
+  List<Jeep> fetchJeeps(  
       @RequestParam (required = false) 
         JeepModel model, 
+      @Length(max = Constants.TRIM_MAX_LENGTH)
+      @Pattern(regexp = "[\\w\\s]*")
       @RequestParam (required = false)
         String trim);
   // @formatter:on

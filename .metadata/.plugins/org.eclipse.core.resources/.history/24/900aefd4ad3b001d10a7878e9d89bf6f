@@ -1,7 +1,0 @@
-package com.promineotech.jeep.controller;
-
-public interface JeepSalesController {
-
-    @RequestMapping("/jeeps")
-    List<Jeep> fetchJeeps(JeepModel model, String trim);
-}
