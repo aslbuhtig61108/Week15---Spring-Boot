@@ -6,12 +6,27 @@ import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.web.client.TestRestTemplate;
+import org.springframework.boot.test.web.server.LocalServerPort;
 import org.springframework.http.HttpStatus;
 import com.promineotech.jeep.entity.Jeep;
 import com.promineotech.jeep.entity.JeepModel;
+import lombok.Getter;
 
 public class FetchJeepTestSupport extends BaseTest {
 
+  @Autowired
+  @Getter // Not in the W14 coding instructions. Rewatching the videos helped me understand Lombok
+          // annotations
+  private TestRestTemplate restTemplate;
+
+  @LocalServerPort
+  private int serverPort;
+
+  protected String getBaseUri() {
+    return String.format("http://localhost:%d/jeeps", serverPort);
+  }
 	protected List<Jeep> buildExpected() {
 
 		List<Jeep> list = new LinkedList<>();

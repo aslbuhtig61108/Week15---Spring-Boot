@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="testThatPolluteTheApplicationContext.testThatAnUnPlannedErrorResultsInA500Status" project="jeep-sales" tests="1" started="1" failures="0" errors="0" ignored="0">
+  <testsuite name="com.promineotech.jeep.controller.FetchJeepTest" time="0.363" displayname="FetchJeepTest" uniqueid="[engine:junit-jupiter]/[class:com.promineotech.jeep.controller.FetchJeepTest]">
+    <testsuite name="com.promineotech.jeep.controller.FetchJeepTest$testThatPolluteTheApplicationContext" time="0.363" displayname="testThatPolluteTheApplicationContext" uniqueid="[engine:junit-jupiter]/[class:com.promineotech.jeep.controller.FetchJeepTest]/[nested-class:testThatPolluteTheApplicationContext]">
+      <testcase name="testThatAnUnPlannedErrorResultsInA500Status" classname="com.promineotech.jeep.controller.FetchJeepTest.testThatPolluteTheApplicationContext" time="0.363" displayname="testThatAnUnPlannedErrorResultsInA500Status()" uniqueid="[engine:junit-jupiter]/[class:com.promineotech.jeep.controller.FetchJeepTest]/[nested-class:testThatPolluteTheApplicationContext]/[method:testThatAnUnPlannedErrorResultsInA500Status()]"/>
+    </testsuite>
+  </testsuite>
+</testrun>
