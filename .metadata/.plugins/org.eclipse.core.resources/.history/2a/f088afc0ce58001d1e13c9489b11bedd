@@ -1,0 +1,14 @@
+package com.promineotech.jeep.controller.support;
+
+import org.springframework.boot.test.web.server.LocalServerPort;
+
+abstract class BaseTest {
+  
+  @LocalServerPort
+  private int serverPort;
+  
+  @Autowired
+
+  
+	
+}
